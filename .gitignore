@@ -1,0 +1,9 @@
+test*
+__pycache__
+log
+
+settings.py
+venv
+.vscode
+admin
+psy-fix.js
