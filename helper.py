@@ -588,21 +588,21 @@ class Helper:
     def get_country_from(self, barContentInfo: BeautifulSoup) -> str:
         res = []
 
-        try:
-            for p in barContentInfo.find_all("p"):
-                if p.find("span"):
-                    key = p.find("span").text.replace(":", "").strip()
-                    if "country" in key.lower():
-                        value = p.text.replace("Country:", "")
-                        value = self.format_text(value)
+        # try:
+        #     for p in barContentInfo.find_all("p"):
+        #         if p.find("span"):
+        #             key = p.find("span").text.replace(":", "").strip()
+        #             if "country" in key.lower():
+        #                 value = p.text.replace("Country:", "")
+        #                 value = self.format_text(value)
 
-                        res += value.split(",")
+        #                 res += value.split(",")
 
-        except Exception as e:
-            self.error_log(
-                msg=f"Failed to get country\n{str(barContentInfo)}\n{e}",
-                log_file="helper.get_country_from.log",
-            )
+        # except Exception as e:
+        #     self.error_log(
+        #         msg=f"Failed to get country\n{str(barContentInfo)}\n{e}",
+        #         log_file="helper.get_country_from.log",
+        #     )
 
         return res
 
